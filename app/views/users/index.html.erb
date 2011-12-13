@@ -1,0 +1,19 @@
+<table>
+<tr>
+    <th>Login</th>
+    <th>Created at</th>
+    <th><%= label_tag :edit if admin_user %></th>
+    <th><%= label_tag :destroy if admin_user%></th>
+</tr>
+<% @users.each do |u| %>
+<ul id="category_list">
+  <tr>
+    <td><%= label_tag u.login %></td>
+    <td><%= u.created_at.strftime("%B %d %Y") %></td>
+    <td><%= link_to 'Edit', edit_user_path(u) %></td>
+    <td><%= link_to 'Destroy', u, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  </ul>
+<% end %>
+</table>
+<br />

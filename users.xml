@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:noNamespaceSchemaLocation="users.xsd">
+    <user>
+        <full-name>John White</full-name>
+        <username>jwhite</username>
+        <password>jwhite</password>
+        <email>jwhite@eventsXXX.com</email>
+        <facebook-id>100002774971272</facebook-id>
+    </user>
+    <user>
+        <full-name>David Green</full-name>
+        <username>dgreen</username>
+        <password>dgreen</password>
+        <email>dgreen@eventsXXX.com</email>
+        <facebook-id>100002808391341</facebook-id>
+    </user>
+    <user>
+        <full-name>Ann Blue</full-name>
+        <username>ablue</username>
+        <password>ablue</password>
+        <email>ablue@eventsXXX.com</email>
+        <facebook-id>100002771239557</facebook-id>
+    </user>
+    <user>
+        <full-name>Max Black</full-name>
+        <username>mblack</username>
+        <password>mblack</password>
+        <email>mblack@eventsXXX.com</email>
+    </user>
+    <user>
+        <full-name>Ketty Purple</full-name>
+        <username>kpurple</username>
+        <password>kpurple</password>
+        <email>kpurple@eventsXXX.com</email>
+    </user>      
+</users>
