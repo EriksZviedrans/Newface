@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  descritption: MyString
+  location: MyString
+  startTime: 2011-12-15
+  endTime: 2011-12-15
+  privacy: false
+
+two:
+  name: MyString
+  descritption: MyString
+  location: MyString
+  startTime: 2011-12-15
+  endTime: 2011-12-15
+  privacy: false
