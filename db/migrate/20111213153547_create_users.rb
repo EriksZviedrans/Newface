@@ -11,6 +11,5 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-    User.loaduserfromxml
   end
 end

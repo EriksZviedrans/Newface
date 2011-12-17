@@ -6,5 +6,7 @@ class CreateFriendships < ActiveRecord::Migration
 
       t.timestamps
     end
+   User.loaduserfromxml
+   Friendship.getfriendships
   end
 end

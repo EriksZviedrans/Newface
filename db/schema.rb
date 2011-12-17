@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111213153547) do
+ActiveRecord::Schema.define(:version => 20111215193359) do
+
+  create_table "events", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "facebook_event_id"
+    t.string   "descritption"
+    t.string   "location"
+    t.date     "startTime"
+    t.date     "endTime"
+    t.boolean  "privacy"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendships", :force => true do |t|
+    t.integer  "id_user"
+    t.integer  "id_friend"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "fullname"
@@ -22,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20111213153547) do
     t.integer  "facebookid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "access_token"
   end
 
 end

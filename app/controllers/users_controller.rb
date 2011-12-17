@@ -49,11 +49,7 @@ class UsersController < ApplicationController
   end
   
   def getjson
- # .parse(open("url_of_json_service").read)
-blah = HTTParty.get("https://graph.facebook.com/100002774971272/friends?access_token=AAACEdEose0cBAHoB5SYQZBA9nVZCuApr16V3vo4ebiXZChi78SlLE5yVB7zxkshCBrPkA3b0wllpULuHVhr5H78tTAYIYHiiftbZBCqXmgZDZD")
 
-
-  puts blah 
 
   end
      

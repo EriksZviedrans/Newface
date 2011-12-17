@@ -4,9 +4,10 @@
     <user>
         <full-name>John White</full-name>
         <username>jwhite</username>
-        <password>jwhite</password>
-        <email>jwhite@eventsXXX.com</email>
+        <password>luweb2009</password>
+        <email>lu.web.programming@gmail.com</email>
         <facebook-id>100002774971272</facebook-id>
+        <access-token>AAACEdEose0cBAHoB5SYQZBA9nVZCuApr16V3vo4ebiXZChi78SlLE5yVB7zxkshCBrPkA3b0wllpULuHVhr5H78tTAYIYHiiftbZBCqXmgZDZD</access-token>
     </user>
     <user>
         <full-name>David Green</full-name>
@@ -18,9 +19,10 @@
     <user>
         <full-name>Ann Blue</full-name>
         <username>ablue</username>
-        <password>ablue</password>
-        <email>ablue@eventsXXX.com</email>
+        <password>luweb2012</password>
+        <email>lu.web.programming.2012@gmail.com</email>
         <facebook-id>100002771239557</facebook-id>
+        <access-token>AAACEdEose0cBAKeviHNNspu2fG1Yxe2Px7MGjb2KbwQv7k9kZBWfSvZCipfAV8x2KxxYNorPjH2cSdhGrSKlLMVuiKBNBbrZAFuIysZCZCgZDZD</access-token>
     </user>
     <user>
         <full-name>Max Black</full-name>

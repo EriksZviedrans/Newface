@@ -28,6 +28,9 @@ gem 'bcrypt-ruby', '~> 3.0.0',  :require => 'bcrypt'
 # Import XML data
 gem 'nokogiri'
 
+# Json gem
+gem 'json'
+
 #get json from facebook
 gem 'httparty'
 

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :fullname, :login, :password, :password_confirmation, :mail, :facebookid
+  has_many :event
+
+  attr_accessible :fullname, :login, :password, :password_confirmation, :mail, :facebookid, :access_token
   attr_accessor :password
   
   before_save :encrypt_password
@@ -37,14 +39,20 @@ class User < ActiveRecord::Base
     else
        facebookid = ''
     end
+    if !node.at('access-token').nil?
+       access_token = node.at('access-token').text 
+    else
+       access_token = ''
+    end
      @user = User.new(
         :fullname => node.at('full-name').text,
         :login => node.at('username').text,
         :mail => node.at('email').text,
         :facebookid => facebookid,
         :password => node.at('password').text,
-        :password_confirmation => node.at('password').text
-      )    
+        :password_confirmation => node.at('password').text,
+        :access_token => access_token
+      )   
       if @user.save
       puts "Success!"
       else

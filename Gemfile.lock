@@ -127,6 +127,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   httparty
   jquery-rails
+  json
   mongrel (>= 1.2.0.pre2)
   nokogiri
   rails (= 3.1.3)
