@@ -31,6 +31,9 @@ gem 'nokogiri'
 # Json gem
 gem 'json'
 
+# log4r gem
+gem "log4r", "~> 1.1.9"
+
 #get json from facebook
 gem 'httparty'
 

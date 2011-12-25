@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  require 'log4r'
   has_many :event
 
   attr_accessible :fullname, :login, :password, :password_confirmation, :mail, :facebookid, :access_token
@@ -54,9 +55,9 @@ class User < ActiveRecord::Base
         :access_token => access_token
       )   
       if @user.save
-      puts "Success!"
+       logger.debug "#{@user.fullname} imported!"
       else
-          puts "This didn't save!"
+       logger.debug "This didn't save!"
       end
 
     end

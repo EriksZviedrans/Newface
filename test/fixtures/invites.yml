@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_owner: MyString
+  name: MyString
+  rsvp_status: MyString
+
+two:
+  event_owner: MyString
+  name: MyString
+  rsvp_status: MyString

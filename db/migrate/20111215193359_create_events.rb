@@ -12,6 +12,6 @@ class CreateEvents < ActiveRecord::Migration
 
       t.timestamps
     end
-    Event.getevents
+   Event.getevents
   end
 end
