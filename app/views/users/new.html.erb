@@ -1,5 +1,5 @@
 <h2>Sign Up</h2>
-<%= form_for @user do |f| %>
+<%= form_for (@user, :html=>{:multipart=>true} ) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -21,6 +21,10 @@
   <div class="field">
   <%= f.label :mail %><br>
   <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= f.file_field :image_file %>
   </div>
   <div class="field">
   <%= f.label :facebookid %><br>

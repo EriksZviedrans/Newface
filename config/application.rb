@@ -39,10 +39,7 @@ module Newface
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
-    # log4r loggerr config
-    log4r_config= YAML.load_file(File.join(File.dirname(__FILE__),"log4r.yml"))
-    YamlConfigurator.decode_yaml( log4r_config['log4r_config'] )
-    config.logger = Log4r::Logger[Rails.env]
+
 
 
     # Configure the default encoding used in templates for Ruby 1.9.

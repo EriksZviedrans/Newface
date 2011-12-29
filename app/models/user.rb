@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   require 'log4r'
   has_many :event
 
-  attr_accessible :fullname, :login, :password, :password_confirmation, :mail, :facebookid, :access_token
+  attr_accessible :fullname, :login, :password, :password_confirmation, :mail, :facebookid, :access_token, :image_file
   attr_accessor :password
   
   before_save :encrypt_password
@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
   validates_presence_of :fullname
   validates_uniqueness_of :mail
   validates_format_of :mail, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+  
+  def image_file=(input_data)
+    self.file_name = input_data.original_filename
+    self.content_type = input_data.content_type.chomp
+    self.binary_data = input_data.read
+  end
   
   def self.authenticate(login, password)
     user = find_by_login(login)
@@ -62,5 +68,7 @@ class User < ActiveRecord::Base
 
     end
   end
+  
+
   
 end

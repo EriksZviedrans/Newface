@@ -13,10 +13,23 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
+  def show
+    @user = User.find(params[:id]) rescue nil
+      if @user.nil?
+      redirect_to root_url
+      else
+       respond_to do |format|
+          format.html
+        #  format.xml { render :xml => @user }
+        end
+      end
+  end
+  
   def create
     @user = User.new(params[:user])
+    
     if @user.save
-      redirect_to root_url, :notice => 'Signed Up!'
+      redirect_to log_in, :notice => 'Signed Up!' 
     else
       render 'new'
     end
@@ -48,9 +61,15 @@ class UsersController < ApplicationController
     end
   end
   
-  def getjson
-       logger.debug "kas"
-       logger.info "dfdfdf"
+  def code_image 
+    @user = User.find(params[:id])
+    @image = @user.binary_data
+    send_data @image, :type => @user.content_type, :filename => @user.file_name, :disposition => 'inline'
   end
+#  def getjson
+ #     logger.debug "Person attributes has"
+#logger.info "Processing the request..."
+#logger.fatal "Terminating application, raised unrecoverable error!!!"
+#  end
      
 end
