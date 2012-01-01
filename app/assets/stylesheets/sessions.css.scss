@@ -1,3 +1,12 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#center {
+  border-style: solid;
+  border-color: #336699;
+  text-align: center;
+  background-color:#70DBFF;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
