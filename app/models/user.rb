@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   require 'log4r'
-  has_many :event
+  has_many :events
 
   attr_accessible :fullname, :login, :password, :password_confirmation, :mail, :facebookid, :access_token, :image_file
   attr_accessor :password

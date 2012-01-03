@@ -1,3 +1,5 @@
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
 <%= form_for(@user, :html=>{:multipart=>true} ) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -33,10 +35,11 @@
   </div>
   <div class="field">
     <%= f.label :access_token %><br />
-    <%= f.text_field :access_token, :size => 100  %>
+    <%= f.text_area :access_token, :size => '34x5' %>
   </div>
   <br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

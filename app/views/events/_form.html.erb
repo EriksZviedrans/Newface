@@ -1,42 +1,44 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+              <%= form_for(@event) do |f| %>
+                <% if @event.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@event.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :descritption %><br />
-    <%= f.text_field :descritption %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :privacy  %><br />
-    <%= f.select :privacy, options_for_select(["True", "False"])%>
-  </div>
-  <div class="field">
-    <%= f.label :startTime %><br />
-    <%= f.text_field :startTime %>
-  </div>
-  <div class="field">
-    <%= f.label :endTime %><br />
-    <%= f.text_field :endTime %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+                    <ul>
+                    <% @event.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= f.label :name %><br />
+                  <%= f.text_field :name %>
+                </div>
+                <div class="field">
+                  <%= f.label :descritption %><br />
+                  <%= f.text_field :descritption %>
+                </div>
+                <div class="field">
+                  <%= f.label :location %><br />
+                  <%= f.text_field :location %>
+                </div>
+                <div class="field">
+                  <%= f.label :privacy  %><br />
+                  <%= f.select :privacy, options_for_select(["True", "False"])%>
+                </div>
+                <div class="field">
+                  <%= f.label :startTime %><br />
+                  <%= f.text_field :startTime %>
+                </div>
+                <div class="field">
+                  <%= f.label :endTime %><br />
+                  <%= f.text_field :endTime %>
+                </div>
+                <br>
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+              <% end %>
+

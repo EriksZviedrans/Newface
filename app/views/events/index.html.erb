@@ -1,19 +1,29 @@
-<table>
-<tr>
-    <th>Event</th>
-    <th>Created at</th>
-    <th><%= label_tag :edit %></th>
-    <th><%= label_tag :destroy %></th>
-</tr>
-<% @events.each do |e| %>
-<ul id="category_list">
-  <tr>
-    <td><%= label_tag e.name %></td>
-    <td><%= e.created_at.strftime("%B %d %Y") %></td>
-    <td><%= link_to 'Edit', edit_event_path(e) %></td>
-    <td><%= link_to 'Destroy', e, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  </ul>
-<% end %>
-</table>
-<br />
+<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+            <table>
+            <tr>
+                <th>Event</th>
+                <th>Created at</th>
+                <th><%= label_tag :edit %></th>
+                <th><%= label_tag :destroy %></th>
+            </tr>
+            <% @events.each do |e| %>
+            <ul id="category_list">
+              <tr>
+                <td><%= label_tag e.name %></td>
+                <td><%= e.created_at.strftime("%B %d %Y") %></td>
+                <td><%= link_to 'Edit', edit_event_path(e) %></td>
+                <td><%= link_to 'Destroy', e, :confirm => 'Are you sure?', :method => :delete %></td>
+              </tr>
+              </ul>
+            <% end %>
+            </table>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

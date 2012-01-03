@@ -1,0 +1,7 @@
+<b>Events(<%= @user.events.count %>):</b>
+<ul>
+  <% @user.events.each do |e| %>
+        <li><%= link_to e.name, e %></li>
+  <% end %>
+        <li><%= link_to "Create event", new_event_path %></li>
+</ul>

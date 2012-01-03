@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #center {
-  border-style: solid;
-  border-color: #336699;
+  background: #FE7805;
+	text-decoration: none;
+	color: #FFFFFF;
   text-align: center;
-  background-color:#70DBFF;
+  padding: 2px 0px 0px 0px;
   width: 200px;
   height: 200px;
   margin: 0 auto;
 }
+
