@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :current_required
+  before_filter :current_required, :except => ["new", "create"]
   def index
     @users = User.all
     respond_to do |format|
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id]) rescue nil
+      @user = User.find(params[:id]) rescue nil
       if @user.nil?
       redirect_to root_url
       else
@@ -65,10 +65,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @image = @user.binary_data
     send_data @image, :type => @user.content_type, :filename => @user.file_name, :disposition => 'inline'
-  end
-  
-  def events
-    @user = User.find(params[:id])
   end
   
 #  def getjson

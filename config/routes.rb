@@ -4,12 +4,14 @@ Newface::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "getjson" => "users#getjson", :as => "getjson"
-  resources :users 
 
+  resources :users do
+    resources :events
+  end
 
-      resources :events
+  
+   resources :events
   resources :sessions
-  match 'users/:id/events' => 'users#events', :as => "user_events"
   match 'code_image/:id' => 'users#code_image'
 
   # The priority is based upon order of creation:

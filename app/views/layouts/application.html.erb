@@ -7,21 +7,52 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% flash.each do |name, msg|%>
-<%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-            <% if current_user %>
-            Logged in as<li><%= label_tag current_user.fullname%></li>
-            <li><%= link_to "Log out", log_out_path %></li>
-            <% else %>
-            <li><%= link_to "Sign up", sign_up_path %></li>
-            <li><%= link_to "Log in", log_in_path %></li>
-            <% end %>
 <div id="wrapper">
-  <% if current_user %>
-  <%= render 'show' %>
-  <% end %>
-<%= yield %>
+  <div id="header-wrapper">
+    	<div id="header">
+      <% if current_user %>
+      <%= render 'users/show' %>
+      <% end %>
+    </div>
+  </div>
+    <div id="page">
+      <div id="page-bgtop">
+        <div id="page-bgbtm">
+        <% if current_user %>
+            <div id="content">
+              <%= yield %>
+            </div>
+          <div id="sidebar">
+					<ul>
+						<li>
+							<div id="search" >
+								<form method="get" action="#">
+									<div>
+										<input type="text" name="s" id="search-text" value="" />
+										<input type="submit" id="search-submit" value="GO" />
+									</div>
+								</form>
+							</div>
+							<div style="clear: both;">&nbsp;</div>
+						</li>
+						<li>
+							  <%= render 'users/events' %>
+						</li>
+					</ul>
+				</div>
+				<% else %>
+				    <div id="sidebar">
+				      <%= yield %>
+				    </div>
+				<% end %>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+	<p>Copyright (c) 2011 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+</div>
 </div>
 </body>
 </html>

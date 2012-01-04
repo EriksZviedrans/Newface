@@ -31,6 +31,7 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
+	color: #C25700;
 }
 
 p, ul, ol {
@@ -71,10 +72,9 @@ a:hover {
 #logo {
 	float: left;
 	width: 350px;
+	padding-top: 10px;
 	margin: 0;
-	padding: 0;
 	color: #B55100;
-	background: image-url('img02.gif') no-repeat left 15px;
 }
 
 #logo h1, #logo p {
@@ -148,7 +148,7 @@ a:hover {
 	float: right;
 	width: 600px;
 	height: 90px;
-	margin: -30px auto;
+	margin: 0px auto;
 	padding: 0;
 }
 
@@ -190,15 +190,15 @@ a:hover {
 /* Page */
 
 #page {
-	width: 990px;
+  width: 990px;
 	margin: 0 auto;
 	padding: 0px 0px 0px 0px;
-	background: image-url('img03.gif') repeat-y left top;
+	background: image-url('img03.jpg') repeat-y left top;
 }
 
 #page-bgtop {
 	padding: 40px 0px 20px 0px;
-	background: image-url('img03.gif') no-repeat left top;
+	background: image-url('img02.jpg') no-repeat left top;
 }
 /* Content */
 
@@ -300,7 +300,6 @@ a:hover {
 
 #sidebar li li a {
 	padding: 0px 0px 0px 15px;
-	background: image-url('img03.gif') no-repeat left 5px;
 }
 
 #sidebar h2 {
@@ -371,18 +370,16 @@ a:hover {
 }
 
 .field_with_errors {
-  color: #F90;
+  color: #FF0000;
   font-weight: bold;
 }
 
 #flash_notice, #flash_alert
 {
-  color: #F90;
+  color: #FF0000;
 	font-weight: bold;
+	padding-left: 30px;
 }
-
-
-
 
    
     

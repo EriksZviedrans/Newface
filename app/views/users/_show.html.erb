@@ -1,22 +1,26 @@
-<div id="header-wrapper">
-		<div id="header">
+<div id="logo">
+  <%= raw image_tag("/code_image/#{current_user.id}", :alt => "avatar", :size => "100x100") %>
+  <div id="details">
+      <br><%= current_user.fullname %></br>
+      <br><%= current_user.login %></br>
+      <br><%= current_user.mail %></br>
+      <strong><br><%= link_to 'Edit profile', edit_user_path(current_user) %></br></strong>
+  </div>
+</div>
+<div id="menu">
+  <ul>
+    <% flash.each do |name, msg|%>
+      <li><%= content_tag :a, msg, :id => "flash_#{name}" %></li>
+    <% end %>
+    <li class="current_page_item"><a href="#">Friends</a></li>
+    <li><%= link_to 'Events', %></li>
+    <li><a href="#">Search</a></li>
+    <li><a href="#">About</a></li>
+            <% if current_user %>
+            <li><%= link_to "Log out", log_out_path %></li>
+            <% end %>
+            
+            
+  </ul>
+</div>
 
-		    <div id="logo">
-            <%= raw image_tag("/code_image/#{@user.id}", :alt => "avatar", :size => "100x100") %>
-              <div id="details">
-                <br><%= @user.fullname %></br>
-                <br><%= @user.login %></br>
-                <br><%= @user.mail %></br>
-                <strong><br><%= link_to 'Edit profile', edit_user_path %></br></strong>
-              </div>
-        </div>
-		   <div id="menu">
-				<ul>
-				  <li class="current_page_item"><a href="#">Friends</a></li>
-					<li><%= link_to 'Events', user_events_path %></li>
-					<li><a href="#">Search</a></li>
-					<li><a href="#">About</a></li>
-				</ul>
-			</div>
-	</div>
-	</div>

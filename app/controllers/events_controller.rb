@@ -23,11 +23,15 @@ $events = Event.all
   
   def new
     @event = Event.new
+    respond_to do |format|
+      format.html 
+      format.xml  { render :xml => @event }
+    end
   end
   
   def create
     @event = Event.new(params[:event])
-    @event.user_id = current_user
+ #   @event.user_id = current_user
     if @event.save
       redirect_to current_user, :notice => 'Event created!'    
     else
