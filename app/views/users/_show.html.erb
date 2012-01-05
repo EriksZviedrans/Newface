@@ -1,3 +1,6 @@
+        <% flash.each do |name, msg|%>
+        <%= content_tag :a, msg, :id => "flash_#{name}" %>
+        <% end %>
 <div id="logo">
   <%= raw image_tag("/code_image/#{current_user.id}", :alt => "avatar", :size => "100x100") %>
   <div id="details">
@@ -9,18 +12,13 @@
 </div>
 <div id="menu">
   <ul>
-    <% flash.each do |name, msg|%>
-      <li><%= content_tag :a, msg, :id => "flash_#{name}" %></li>
-    <% end %>
-    <li class="current_page_item"><a href="#">Friends</a></li>
+    <li class="current_page_item"><%= link_to 'Friends', users_path %></li>
     <li><%= link_to 'Events', %></li>
     <li><a href="#">Search</a></li>
     <li><a href="#">About</a></li>
             <% if current_user %>
             <li><%= link_to "Log out", log_out_path %></li>
-            <% end %>
-            
-            
+            <% end %>           
   </ul>
 </div>
 

@@ -31,7 +31,7 @@ $events = Event.all
   
   def create
     @event = Event.new(params[:event])
- #   @event.user_id = current_user
+    @event.user_id = current_user
     if @event.save
       redirect_to current_user, :notice => 'Event created!'    
     else

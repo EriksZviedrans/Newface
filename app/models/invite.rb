@@ -4,7 +4,7 @@ class Invite < ActiveRecord::Base
   def self.getinvite
     @users = User.all
       @users.each do |user|
-          @events = user.event
+           @events = user.events
            @events.each do |event|
            @url_new_string = 'https://graph.facebook.com/'+event.facebook_event_id.to_s+'/invited?access_token='+user.access_token.to_s
             response = HTTParty.get(@url_new_string.to_str)

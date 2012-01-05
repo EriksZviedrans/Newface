@@ -1,6 +1,10 @@
-<p>
-  <b>Event name:</b>
-  <%= @event.name %>
+  <h2><%= @event.name %></h2>
+<p class="meta"><span class="date">
+<b>Start time:</b><%= @event.startTime %>
+</span>
+<span class="date">
+<b>End time:</b><%= @event.endTime %>
+</span>
 </p>
 <p>
   <b>Location:</b>

@@ -8,9 +8,7 @@ Newface::Application.routes.draw do
   resources :users do
     resources :events
   end
-
-  
-   resources :events
+  resources :events
   resources :sessions
   match 'code_image/:id' => 'users#code_image'
 
