@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-$events = Event.all
   def index
     @events = Event.all
     respond_to do |format|
@@ -40,7 +39,15 @@ $events = Event.all
   end
 
   def edit
-    @event = Event.find(params[:id])
+
+   @event = Event.find(params[:id])
+   #@current_user_events = Event.find_all_by_user_id(session[:user_id])
+   #@current_user_events.each do |event|
+   #p event.id
+    #  if  event.id != @event.id
+   #     p 'test'
+    #  end
+  # end
   end
   
   def update

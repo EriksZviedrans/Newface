@@ -14,4 +14,4 @@
   <b>Descritption:</b>
   <%= @event.descritption %>
 </p>
-<%= link_to 'Back', current_user %> | <%= link_to 'Edit Event', edit_event_path %>
+<%= link_to 'Back', current_user %> | <%= link_to 'Edit Event', edit_event_path  if current_user_events  %>

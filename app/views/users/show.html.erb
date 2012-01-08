@@ -1,0 +1,14 @@
+  <%= raw image_tag("/code_image/#{@user.id}", :alt => "avatar", :size => "200x200") %>
+  <div id="details">
+      <h2><br><%= @user.fullname %></br></h2>
+      <br><%= @user.login %></br>
+      <br><%= @user.mail %></br>
+      <br><%= render 'events' %></br>
+  </div>
+      <br /><% if status.nil? %>
+              <%= link_to 'Invite' %>
+            <% else %>
+              <%= label_tag 'My Friend!' %>
+            <% end %>
+
+

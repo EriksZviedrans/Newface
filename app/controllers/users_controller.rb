@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_filter :current_required, :except => ["new", "create"]
   def index
-    @users = User.all
-    respond_to do |format|
-      format.html
- #     format.xml(render :xml => @users)
-  #    format.json(render :xml => @users)
-    end
+    @friends = Friendship.find_by_sql("select * from users where id in 
+    (select friendships.id_friend from friendships where friendships.id_user = #{current_user.id})")
+            respond_to do |format|
+              format.html
+            end
   end
 
   def new
@@ -14,6 +13,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    p status
       @user = User.find(params[:id]) rescue nil
       if @user.nil?
       redirect_to root_url
@@ -67,10 +67,8 @@ class UsersController < ApplicationController
     send_data @image, :type => @user.content_type, :filename => @user.file_name, :disposition => 'inline'
   end
   
-#  def getjson
- #     logger.debug "Person attributes has"
-#logger.info "Processing the request..."
-#logger.fatal "Terminating application, raised unrecoverable error!!!"
-#  end
+  def people
+    @people = User.where("not id = #{current_user.id}")
+  end 
      
 end

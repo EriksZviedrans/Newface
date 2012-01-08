@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20111229183926) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.string   "mail"
-    t.integer  "facebookid"
+    t.integer  "facebookid",    :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "access_token"
