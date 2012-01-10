@@ -11,6 +11,8 @@ Newface::Application.routes.draw do
   resources :events
   resources :sessions
   match 'code_image/:id' => 'users#code_image'
+  match 'users/invite/:id' => 'users#invite'
+  match 'users/accept/:id' => 'users#accept'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

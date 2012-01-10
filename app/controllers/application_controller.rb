@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user, :current_user_events, :status
+  helper_method :current_user, :current_user_events, :invite_request
   
   private  
   def current_user
@@ -33,9 +33,8 @@ class ApplicationController < ActionController::Base
       end
   end
   
-  def status
-    @user = User.find(params[:id]) 
-    @friend = Friendship.find_by_id_user_and_id_friend(current_user.id, @user.id)
+  def invite_request 
+      invites = Friendship.find_all_by_request(current_user.id)
   end 
 
   

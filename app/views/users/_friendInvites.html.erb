@@ -1,0 +1,8 @@
+<h2>Requested Friendships(<%= invite_request.count %>):</h2>
+<ul>
+<% invite_request.each do |i| %>
+<li><strong><%= link_to User.find(i.id_user).fullname, user_path(i.id_user) %></strong>
+<%= link_to 'Accept',:controller => "users", :action => "accept", :id => i.id_user %>
+<%= link_to 'Decline' %><div></li>
+<% end %>
+</ul>
