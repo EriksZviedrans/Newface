@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      redirect_to log_in, :notice => 'Signed Up!' 
+      redirect_to log_in_path, :notice => 'Signed Up!' 
     else
       render 'new'
     end
@@ -89,15 +89,25 @@ class UsersController < ApplicationController
   end 
   
   def accept
-        @newfriend = User.find(params[:id])
-        @friendship = Friendship.new(
+        @friendship = Friendship.find_by_id_user_and_request(params[:id],current_user.id)
+        @currentfriend = Friendship.new(
                                     :id_user => current_user.id,
-                                    :id_friend => @newfriend.id,
+                                    :id_friend => @friendship.id_user,
                                     :request => nil
                                   )
-        if @friendship.save
-          redirect_to :back, :notice => @newfriend.fullname+' are now your friend!'    
+        @friendship.id_friend = current_user.id
+        @friendship.request = nil
+        if @friendship.save and @currentfriend.save
+          redirect_to :back, :notice => 'Invite accept!'    
         end
+  end
+  
+  def decline
+  end
+  
+  def friends_online
+    @online = User.where("not id = #{current_user.id} and online = TRUE and id in 
+    (select friendships.id_friend from friendships where friendships.id_user = #{current_user.id})")
   end
      
 end

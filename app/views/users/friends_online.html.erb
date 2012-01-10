@@ -1,0 +1,11 @@
+<table>
+<% @online.each do |u| %>
+<ul id="category_list">
+  <td>
+      <%= raw link_to image_tag("/code_image/#{u.id}", :alt => "avatar", :size => "100x100"), user_path(u) %><br />
+      <h3><%= link_to u.fullname, user_path(u) %></h3>
+  </td>
+  </ul>
+<% end %>
+</table>
+<br />

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120109203502) do
+ActiveRecord::Schema.define(:version => 20120110200658) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20120109203502) do
     t.string   "content_type"
     t.string   "file_name"
     t.binary   "binary_data"
+    t.boolean  "online"
   end
 
 end

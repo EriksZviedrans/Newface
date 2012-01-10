@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  helper_method :current_user, :current_user_events, :invite_request
+  helper_method :current_user, :current_user_events, :invite_request , :url_path
+  def url_path(path)
+    @url_path = "http://"+request.env['HTTP_HOST'].to_s+path.to_s
+  end
   
   private  
   def current_user

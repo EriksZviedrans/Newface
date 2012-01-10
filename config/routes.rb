@@ -4,6 +4,7 @@ Newface::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "people" => "users#people", :as => "people"
+  get "friends_online" => "users#friends_online", :as => "friends_online"
 
   resources :users do
     resources :events
@@ -11,7 +12,7 @@ Newface::Application.routes.draw do
   resources :events
   resources :sessions
   match 'code_image/:id' => 'users#code_image'
-  match 'users/invite/:id' => 'users#invite'
+  match 'users/invite/:id' => 'users#invite', :as => 'invite_friend'
   match 'users/accept/:id' => 'users#accept'
 
   # The priority is based upon order of creation:

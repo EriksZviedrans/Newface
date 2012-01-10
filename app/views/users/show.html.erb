@@ -5,12 +5,14 @@
       <br><%= @user.mail %></br>
       <br><%= render 'events' %></br>
   </div>
-      <br /><% if $request  %>
-              <%= label_tag 'Request sent!' %>
-            <% elsif @status.nil? %>
-              <%= link_to 'Invite',:controller => "users", :action => "invite", :id => @user %>
-            <% else %>
-              <%= label_tag 'My Friend!' %>
+      <br /><% if current_user.id != @user.id %>
+              <% if $request  %>
+                <%= label_tag 'Request sent!' %>
+              <% elsif @status.nil? %>
+                <%= link_to 'Invite', invite_friend_path(@user), :remote => true %>
+              <% else %>
+                <%= label_tag 'My Friend!' %>
+              <% end %>
             <% end %>
 
 
