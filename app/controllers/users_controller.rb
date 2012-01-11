@@ -82,10 +82,13 @@ class UsersController < ApplicationController
                                     :id_friend => nil,
                                     :request => @friend.id
                                   )
-        if @friendship.save
-          redirect_to :back, :notice => 'Request send!'    
+        respond_to do |format|
+          if @friendship.save
+           format.html { redirect_to :back, :notice => 'Request send!'}
+           format.js
+          end
         end
-    end
+    end   
   end 
   
   def accept

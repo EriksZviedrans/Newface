@@ -8,4 +8,18 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+//$('.send_invite').bind('ajax:before', function() {  
+//        alert("test");  
+//   });  
 
+jQuery.noConflict();
+
+jQuery(function($) {
+ $("#button").click(function() {
+       alert('Hello World!');
+    });
+
+     $('.send_invite').bind('ajax:success', function() {  
+       $(this).closest('#status').fadeOut();  
+   }); 
+});
