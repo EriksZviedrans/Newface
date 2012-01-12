@@ -15,11 +15,19 @@
 jQuery.noConflict();
 
 jQuery(function($) {
- $("#button").click(function() {
-       alert('Hello World!');
-    });
+ $(".send_invite").click(function() {
+  $('#status').fadeOut('fast').fadeIn('slow').html('Request send!');
+ })
+});
 
-     $('.send_invite').bind('ajax:success', function() {  
-       $(this).closest('#status').fadeOut();  
-   }); 
+// jQuery(document).ready(function($) {
+//              $('#button').bind('ajax:success', function() {  
+//        alert('Hello World!');//$(this).closest('li.item-a').fadeOut();  
+//    });  
+//  }); 
+
+jQuery(function($) {
+           $("#button").click(function() {
+                      $('li').closest('li').fadeOut(); 
+           });
 });

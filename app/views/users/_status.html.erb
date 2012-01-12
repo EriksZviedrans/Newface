@@ -1,2 +1,9 @@
-
-
+<% if current_user.id != @user.id %>
+              <% if $request  %>
+                <%= label_tag 'Request send!'%>
+              <% elsif @status.nil? %>
+                <%= link_to 'Invite', invite_friend_path(@user), :remote => true, :class=>'send_invite'  %>
+              <% else %>
+                <%= label_tag 'My Friend!' %>
+              <% end %>
+            <% end %>

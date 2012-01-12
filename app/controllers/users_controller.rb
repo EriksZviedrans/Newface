@@ -100,8 +100,11 @@ class UsersController < ApplicationController
                                   )
         @friendship.id_friend = current_user.id
         @friendship.request = nil
-        if @friendship.save and @currentfriend.save
-          redirect_to :back, :notice => 'Invite accept!'    
+        respond_to do |format|
+            if @friendship.save and @currentfriend.save
+              format.html {redirect_to :back, :notice => 'Invite accept!'}
+              format.js    
+            end
         end
   end
   
