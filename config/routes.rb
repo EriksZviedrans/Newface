@@ -5,6 +5,7 @@ Newface::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "people" => "users#people", :as => "people"
   get "friends_online" => "users#friends_online", :as => "friends_online"
+  get "search" => "users#search", :as => "search"
 
   resources :users do
     resources :events
@@ -14,6 +15,8 @@ Newface::Application.routes.draw do
   match 'code_image/:id' => 'users#code_image'
   match 'users/invite/:id' => 'users#invite', :as => 'invite_friend'
   match 'users/accept/:id' => 'users#accept'
+  match 'users/decline/:id' => 'users#decline'
+  match 'search' => 'users#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

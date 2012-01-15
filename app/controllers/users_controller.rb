@@ -6,7 +6,17 @@ class UsersController < ApplicationController
     (select friendships.id_friend from friendships where friendships.id_user = #{current_user.id})")
             respond_to do |format|
               format.html
-            end
+            end    
+  end
+  
+  def search
+    @search_name = params[:search_name]
+    p @search_name
+    @search = User.find_by_sql("select * from users where fullname like '%#{@search_name}%' or login like '%#{@search_name}%'")
+    p @search
+    respond_to do |format|
+      format.html 
+    end    
   end
 
   def new
@@ -30,12 +40,13 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    
-    if @user.save
-      redirect_to log_in_path, :notice => 'Signed Up!' 
-    else
-      render 'new'
-    end
+      respond_to do |format|  
+                  if @user.save
+                    format.html {redirect_to log_in_path, :notice => 'Signed Up!'}
+                  else
+                    format.html {render 'new'}
+                  end
+      end
   end
 
   def edit
@@ -92,6 +103,7 @@ class UsersController < ApplicationController
   end 
   
   def accept
+  #
         @friendship = Friendship.find_by_id_user_and_request(params[:id],current_user.id)
         @currentfriend = Friendship.new(
                                     :id_user => current_user.id,
@@ -109,6 +121,8 @@ class UsersController < ApplicationController
   end
   
   def decline
+    @friendship = Friendship.find_by_id_user_and_request(params[:id],current_user.id)
+    @friendship.delete
   end
   
   def friends_online

@@ -32,6 +32,10 @@ gem 'bcrypt-ruby', '~> 3.0.0',  :require => 'bcrypt'
 # Import XML data
 gem 'nokogiri'
 
+# Page pagination
+gem 'will_paginate', '3.0.pre2'
+
+
 # Json gem
 gem 'json'
 

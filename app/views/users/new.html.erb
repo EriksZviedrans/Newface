@@ -1,6 +1,6 @@
 <h2>Sign Up</h2>
 <div class="entry">
-<%= form_for(@user, :html=>{:multipart=>true} ) do |f| %>
+<%= form_for(@user, :html=>{:multipart=>true}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h3><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h3>

@@ -20,14 +20,8 @@ jQuery(function($) {
  })
 });
 
-// jQuery(document).ready(function($) {
-//              $('#button').bind('ajax:success', function() {  
-//        alert('Hello World!');//$(this).closest('li.item-a').fadeOut();  
-//    });  
-//  }); 
-
 jQuery(function($) {
-           $("#button").click(function() {
-                      $('li').closest('li').fadeOut(); 
+           $(".accept").click(function() {
+                      $(this).closest('li').fadeOut();
            });
 });
