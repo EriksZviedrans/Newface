@@ -8,7 +8,7 @@ gem 'rails', '3.1.3'
 #gem for postgresql connection
 gem 'pg'
 
-gem 'sqlite3'
+# gem 'sqlite3'
 # for JavaScript runtime
 gem 'therubyracer', require: "v8"
 
