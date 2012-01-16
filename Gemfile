@@ -45,6 +45,10 @@ gem "log4r", "~> 1.1.9"
 #get json from facebook
 gem 'httparty'
 
+# heroku cloud gem plugin
+gem 'heroku'
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

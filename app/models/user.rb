@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates_presence_of :fullname
   validates_uniqueness_of :mail
   validates_format_of :mail, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-   
+
   def image_file=(input_data)
     self.file_name = input_data.original_filename
     self.content_type = input_data.content_type.chomp

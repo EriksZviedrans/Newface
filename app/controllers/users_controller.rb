@@ -10,10 +10,8 @@ class UsersController < ApplicationController
   end
   
   def search
-    @search_name = params[:search_name]
-    p @search_name
+    @search_name = params[:user_name]
     @search = User.find_by_sql("select * from users where fullname like '%#{@search_name}%' or login like '%#{@search_name}%'")
-    p @search
     respond_to do |format|
       format.html 
     end    
@@ -129,5 +127,5 @@ class UsersController < ApplicationController
     @online = User.where("not id = #{current_user.id} and online = TRUE and id in 
     (select friendships.id_friend from friendships where friendships.id_user = #{current_user.id})")
   end
-     
+  
 end
